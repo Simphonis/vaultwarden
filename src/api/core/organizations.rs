@@ -502,9 +502,11 @@ async fn post_organization_collections(
     let data: FullCollectionData = data.into_inner();
     data.validate(&org_id, &conn).await?;
 
-    if headers.membership.atype == MembershipType::Manager && !headers.membership.access_all {
-        err!("You don't have permission to create collections")
-    }
+    // PATCH Revert #6890
+    // if headers.membership.atype == MembershipType::Manager && !headers.membership.access_all {
+    //     err!("You don't have permission to create collections")
+    // }
+    // END PATCH
 
     let collection = Collection::new(org_id.clone(), data.name, data.external_id);
     collection.save(&conn).await?;
@@ -545,6 +547,12 @@ async fn post_organization_collections(
         )
         .await?;
     }
+
+    // PATCH Revert #6890
+    if headers.membership.atype == MembershipType::Manager && !headers.membership.access_all {
+        CollectionUser::save(&headers.membership.user_uuid, &collection.uuid, false, false, false, &conn).await?;
+    }
+    // END PATCH
 
     Ok(Json(collection.to_json_details(&headers.membership.user_uuid, None, &conn).await))
 }

@@ -1,4 +1,4 @@
-This is a fork from the official Vaultwarden repo, in which we made changes to accomodate the way we use the tool. These changes include :
+This is a fork from the official Vaultwarden repo, in which we made changes to accommodate the way we use the tool. These changes include :
 - Collection managers with the `Other` role are able to create collections (rollback of PR [#6890](https://github.com/dani-garcia/vaultwarden/pull/6890))
 
 ---
