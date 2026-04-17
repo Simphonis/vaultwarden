@@ -63,7 +63,7 @@ function "labels" {
     "org.opencontainers.image.description" = "Unofficial Bitwarden compatible server written in Rust - ${SOURCE_VERSION}"
     "org.opencontainers.image.licenses" = "AGPL-3.0-only"
     "org.opencontainers.image.documentation" = "https://github.com/dani-garcia/vaultwarden/wiki"
-    "org.opencontainers.image.url" = "https://github.com/dani-garcia/vaultwarden"
+    "org.opencontainers.image.url" = "https://github.com/simphonis/vaultwarden"
     "org.opencontainers.image.created" =  "${formatdate("YYYY-MM-DD'T'hh:mm:ssZZZZZ", timestamp())}"
     "org.opencontainers.image.source" = "${SOURCE_REPOSITORY_URL}"
     "org.opencontainers.image.revision" = "${SOURCE_COMMIT}"

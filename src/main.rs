@@ -206,7 +206,7 @@ fn launch_info() {
     println!(
         "\
         /--------------------------------------------------------------------\\\n\
-        |                        Starting Vaultwarden                        |"
+        |                  Starting Vaultwarden - Simphonis                  |"
     );
 
     if let Some(version) = VERSION {
