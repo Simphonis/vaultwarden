@@ -1,3 +1,8 @@
+This is a fork from the official Vaultwarden repo, in which we made changes to accomodate the way we use the tool. These changes include :
+- Collection managers with the `Other` role are able to create collections (rollback of PR [#6890](https://github.com/dani-garcia/vaultwarden/pull/6890))
+
+---
+
 ![Vaultwarden Logo](./resources/vaultwarden-logo-auto.svg)
 
 An alternative server implementation of the Bitwarden Client API, written in Rust and compatible with [official Bitwarden clients](https://bitwarden.com/download/) [[disclaimer](#disclaimer)], perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.
