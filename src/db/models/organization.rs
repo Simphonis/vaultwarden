@@ -514,8 +514,9 @@ impl Membership {
             "familySponsorshipValidUntil": null,
             "familySponsorshipToDelete": null,
             "accessSecretsManager": false,
-            // limit collection creation to managers with access_all permission to prevent issues
-            "limitCollectionCreation": self.atype < MembershipType::Manager || !self.access_all,
+            // PATCH Revert #6890
+            "limitCollectionCreation": self.atype < MembershipType::Manager, // If less then a manager return true, to limit collection creations
+            // END PATCH
             "limitCollectionDeletion": true,
             "limitItemDeletion": false,
             "allowAdminAccessToAllCollectionItems": true,
